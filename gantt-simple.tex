@@ -1,0 +1,17 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfgantt}
+\begin{document}
+
+\begin{ganttchart}[
+    vgrid={*2{black}, *1{dashed}},
+    x unit=10mm,
+    y unit chart=9mm,
+    y unit title=12mm,
+    time slot format=isodate,
+    compress calendar=true
+    ]{2017-11-29}{2018-11-28}
+    \gantttitlecalendar{year, month=shortname}\\
+
+\end{ganttchart}
+
+\end{document}
