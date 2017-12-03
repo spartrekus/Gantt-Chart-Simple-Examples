@@ -1,0 +1,29 @@
+
+
+\documentclass{article}
+\usepackage{pgfgantt}
+
+
+ \newgantttimeslotformat{stardate}{%
+ \def\decomposestardate##1.##2\relax{%
+ \def\stardateyear{##1}\def\stardateday{##2}%
+ }%
+ \decomposestardate#1\relax%
+ \pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+ \advance#2 by-1\relax%
+ \advance#2 by\stardateday\relax%
+ }
+
+
+
+
+\begin{document}
+
+\begin{ganttchart}[hgrid,vgrid,time slot format=stardate]{2259.55}{2259.67}
+\gantttitlecalendar{year, month=name, day} \\
+\end{ganttchart}
+
+
+\end{document}
+
+
